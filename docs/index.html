@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blocúria · um mundo de blocos para explorar e construir</title>
+<meta name="description" content="Blocúria é um jogo de blocos para Windows, feito pela Andorinha: explora, constrói, faz amigos nas aldeias e sobrevive às noites. Descarrega grátis.">
+<link rel="icon" href="img/icone.png">
+<meta property="og:title" content="Blocúria">
+<meta property="og:description" content="Um mundo de blocos para explorar, construir e sobreviver. Grátis para Windows.">
+<meta property="og:image" content="img/paisagem.jpg">
+<style>
+  :root {
+    --erva: #5fae3a; --erva-esc: #2f6a1c; --terra: #7a4f2c; --ceu: #8cc8ff; --noite: #0b1626; --noite2: #13243a;
+    --papel: #f4efe3; --tinta: #1d2430; --ouro: #f0c24a; --radius: 6px;
+    --pixel: 4px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: var(--papel); background: var(--noite); line-height: 1.55; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1120px, 100% - 40px); margin: 0 auto; }
+
+  /* letras em "blocos": sombra dura, sem desfoque */
+  .bloco-txt { font-weight: 900; letter-spacing: .02em; text-shadow: var(--pixel) var(--pixel) 0 rgba(0,0,0,.45); }
+
+  /* ---------- topo ---------- */
+  nav { position: fixed; inset: 0 0 auto; z-index: 10; background: rgba(11,22,38,.72); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); }
+  nav .wrap { display: flex; align-items: center; gap: 22px; height: 60px; }
+  nav .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 20px; }
+  nav .marca img { width: 34px; height: 34px; image-rendering: pixelated; }
+  nav .links { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
+  nav .links a { text-decoration: none; opacity: .85; } nav .links a:hover { opacity: 1; }
+  nav .btn { padding: 8px 16px; font-size: 14px; }
+  @media (max-width: 760px) { nav .links { display: none; } }
+
+  /* ---------- herói ---------- */
+  .heroi { position: relative; min-height: 92vh; display: flex; align-items: flex-end; padding: 120px 0 90px; overflow: hidden;
+    background: linear-gradient(180deg, rgba(11,22,38,.15) 0%, rgba(11,22,38,.05) 40%, rgba(11,22,38,.92) 100%), url(img/paisagem.jpg) center 35% / cover no-repeat; }
+  .heroi h1 { font-size: clamp(56px, 11vw, 132px); line-height: .92; margin: 0 0 14px; }
+  .heroi p.sub { font-size: clamp(18px, 2.3vw, 24px); max-width: 640px; margin: 0 0 28px; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+  .heroi .acoes { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .heroi .meta { font-size: 14px; opacity: .85; margin-top: 14px; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+  /* chão de relva por baixo do herói */
+  .chao { height: 28px; background:
+      linear-gradient(180deg, var(--erva) 0 10px, var(--erva-esc) 10px 13px, var(--terra) 13px 100%);
+    box-shadow: inset 0 -6px 0 rgba(0,0,0,.25); position: relative; }
+  .chao::before { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 6px;
+    background: repeating-linear-gradient(90deg, var(--erva) 0 12px, transparent 12px 20px, var(--erva) 20px 28px, transparent 28px 44px); }
+
+  /* ---------- botões ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; color: #fff; cursor: pointer;
+    padding: 14px 26px; font-size: 18px; border: 0; border-radius: var(--radius);
+    background: var(--erva); box-shadow: inset 0 -5px 0 var(--erva-esc), 0 6px 0 rgba(0,0,0,.35); transition: transform .08s, filter .15s; }
+  .btn:hover { filter: brightness(1.08); } .btn:active { transform: translateY(3px); box-shadow: inset 0 -2px 0 var(--erva-esc), 0 3px 0 rgba(0,0,0,.35); }
+  .btn.grande { padding: 18px 34px; font-size: 22px; }
+  .btn.sec { background: #3c5a7e; box-shadow: inset 0 -5px 0 #253a54, 0 6px 0 rgba(0,0,0,.35); }
+  .btn svg { width: 22px; height: 22px; }
+
+  /* ---------- secções ---------- */
+  section { padding: 90px 0; }
+  section h2 { font-size: clamp(32px, 4.5vw, 48px); margin: 0 0 10px; }
+  section .lead { font-size: 19px; max-width: 720px; opacity: .88; margin: 0 0 40px; }
+  .claro { background: var(--papel); color: var(--tinta); }
+  .claro .bloco-txt { text-shadow: var(--pixel) var(--pixel) 0 rgba(0,0,0,.12); }
+
+  /* características: cartões em grelha, cada um com um "bloco" de cor */
+  .grelha { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  .carta { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 0 rgba(0,0,0,.08), 0 14px 30px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+  .carta img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; }
+  .carta .corpo { padding: 18px 20px 22px; }
+  .carta h3 { margin: 0 0 6px; font-size: 21px; display: flex; align-items: center; gap: 10px; }
+  .carta h3 i { width: 16px; height: 16px; flex: none; background: var(--c, var(--erva)); box-shadow: inset -3px -3px 0 rgba(0,0,0,.25); }
+  .carta p { margin: 0; font-size: 15.5px; color: #3d4654; }
+
+  /* destaque largo (pescador) */
+  .destaque { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .destaque img { border-radius: var(--radius); box-shadow: 0 8px 0 rgba(0,0,0,.3); }
+  @media (max-width: 860px) { .destaque { grid-template-columns: 1fr; } }
+  .lista-bloco { list-style: none; padding: 0; margin: 0; }
+  .lista-bloco li { padding-left: 28px; position: relative; margin: 10px 0; font-size: 17px; }
+  .lista-bloco li::before { content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 14px; background: var(--ouro); box-shadow: inset -3px -3px 0 rgba(0,0,0,.25); }
+
+  /* galeria */
+  .galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .galeria a { border-radius: var(--radius); overflow: hidden; display: block; position: relative; }
+  .galeria img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; transition: transform .3s; }
+  .galeria a:hover img { transform: scale(1.04); }
+  .galeria a.largo { grid-column: span 2; } .galeria a.largo img { aspect-ratio: 8 / 3.05; }
+  .galeria span { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 12px 8px; font-size: 14px; font-weight: 700; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
+  @media (max-width: 760px) { .galeria { grid-template-columns: repeat(2, 1fr); } .galeria a.largo { grid-column: span 2; } }
+
+  /* novidades */
+  #novidades { background: var(--noite2); }
+  .versoes { display: grid; gap: 16px; }
+  .versao { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px 22px; }
+  .versao header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .versao .num { font-weight: 900; font-size: 22px; color: var(--ouro); }
+  .versao .tit { font-weight: 800; font-size: 19px; }
+  .versao .data { font-size: 13px; opacity: .6; margin-left: auto; }
+  .versao p { margin: 6px 0 0; opacity: .88; }
+  .versao details { margin-top: 10px; } .versao summary { cursor: pointer; font-weight: 700; font-size: 14px; color: #9fd0ff; }
+  .versao h4 { margin: 12px 0 4px; font-size: 15px; } .versao ul { margin: 0; padding-left: 20px; font-size: 14.5px; opacity: .9; }
+  .aviso-carregar { opacity: .7; }
+
+  /* descarregar */
+  #descarregar { background: linear-gradient(180deg, var(--noite) 0%, #10223a 100%); }
+  .caixa-dl { display: grid; grid-template-columns: 1.2fr 1fr; gap: 34px; align-items: start; }
+  @media (max-width: 860px) { .caixa-dl { grid-template-columns: 1fr; } }
+  .painel { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 24px 26px; }
+  .painel h3 { margin: 0 0 12px; font-size: 20px; }
+  .passos { counter-reset: p; list-style: none; padding: 0; margin: 0; }
+  .passos li { counter-increment: p; position: relative; padding-left: 46px; margin: 0 0 16px; }
+  .passos li::before { content: counter(p); position: absolute; left: 0; top: 0; width: 32px; height: 32px; display: grid; place-items: center; font-weight: 900; background: var(--erva); box-shadow: inset 0 -4px 0 var(--erva-esc); border-radius: 4px; }
+  .passos b { display: block; }
+  .tabela { width: 100%; border-collapse: collapse; font-size: 15px; } .tabela td { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; } .tabela td:first-child { opacity: .7; width: 42%; }
+  .nota { font-size: 14px; opacity: .75; margin-top: 14px; }
+
+  footer { background: #070e18; padding: 34px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; opacity: .75; }
+
+  /* ampliar imagens */
+  #zoom { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.9); display: none; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px; }
+  #zoom.on { display: flex; } #zoom img { max-height: 92vh; max-width: 96vw; border-radius: var(--radius); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="marca" href="#"><img src="img/icone.png" alt="">Blocúria</a>
+    <div class="links"><a href="#mundo">O mundo</a><a href="#galeria">Imagens</a><a href="#novidades">Novidades</a><a href="#descarregar">Descarregar</a></div>
+    <a class="btn nav-dl" href="#descarregar">Descarregar</a>
+  </div>
+</nav>
+
+<header class="heroi">
+  <div class="wrap">
+    <h1 class="bloco-txt">Blocúria</h1>
+    <p class="sub">Um mundo inteiro feito de blocos. Explora montanhas e grutas, constrói a tua casa, faz negócio nas aldeias e aguenta-te quando cai a noite.</p>
+    <div class="acoes">
+      <a class="btn grande" href="Blocuria-Instalador.exe" download>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v10l3.5-3.5 1.4 1.4L12 16.8 6.1 10.9l1.4-1.4L11 13V3zM4 19h16v2H4z"/></svg>
+        Descarregar para Windows
+      </a>
+      <a class="btn sec" href="#mundo">Saber mais</a>
+    </div>
+    <div class="meta">Grátis · Windows 10 e 11 (64 bits) · <span class="ver-txt">versão mais recente</span> · atualiza-se sozinho</div>
+  </div>
+</header>
+<div class="chao"></div>
+
+<section id="mundo" class="claro">
+  <div class="wrap">
+    <h2 class="bloco-txt">Um mundo que vive sem ti</h2>
+    <p class="lead">Na Blocúria, o mundo não fica à espera. Os aldeões trabalham, os animais dormem e fogem da chuva, e as criaturas da noite andam à tua procura.</p>
+    <div class="grelha">
+      <article class="carta">
+        <img src="img/paisagem.jpg" alt="Paisagem com lagos, praias, florestas e neve" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#5fae3a"></i>Explora sem fim</h3><p>Florestas, praias, pântanos, desertos, montanhas com neve e grutas cheias de minério. Cada semente gera um mundo diferente.</p></div>
+      </article>
+      <article class="carta">
+        <img src="img/praca.jpg" alt="Aldeia com praça de pedra e poço" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#e0a040"></i>Aldeias com vida</h3><p>Agricultores, pastores, pescadores, ferreiros, mineiros e sábios, cada um com a sua casa e a sua mesa de trabalho. Faz negócio em safiras e desbloqueia trocas melhores.</p></div>
+      </article>
+      <article class="carta">
+        <img src="img/dormir.jpg" alt="Animais deitados a dormir" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#9a7ad8"></i>Animais de verdade</h3><p>Javalis, ovelhas, veados, galinhas e avestruzes. Dormem de noite, abrigam-se da chuva e ficam no mundo como o terreno.</p></div>
+      </article>
+      <article class="carta">
+        <img src="img/avestruz.jpg" alt="Avestruzes a correr" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#c86a3a"></i>Companheiros</h3><p>Doma um lobo que te segue, se senta e luta ao teu lado, ou põe uma sela numa avestruz e atravessa o mapa a correr.</p></div>
+      </article>
+      <article class="carta">
+        <img src="img/cerca.jpg" alt="Animais dentro de uma cerca com portão" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#7a4f2c"></i>Constrói o que quiseres</h3><p>Centenas de blocos e objetos: casas, quintas, cercas com portões, barcos, fornalhas, baús e muito mais. Modo de sobrevivência ou criativo.</p></div>
+      </article>
+      <article class="carta">
+        <img src="img/aldeia.jpg" alt="Aldeia vista do alto junto ao mar" loading="lazy">
+        <div class="corpo"><h3><i style="--c:#4a8ad8"></i>Joga com amigos</h3><p>Multijogador na mesma rede: um abre o mundo e os outros entram. Também dá através de redes virtuais como o Radmin VPN.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap destaque">
+    <img src="img/pescador.gif" alt="Uma pescadora a lançar a linha e a puxar o peixe" loading="lazy">
+    <div>
+      <h2 class="bloco-txt">Cheio de pormenores</h2>
+      <p class="lead" style="margin-bottom:18px">Cada coisa foi pensada para dar gosto de ver.</p>
+      <ul class="lista-bloco">
+        <li>Os pescadores lançam a linha, esperam que o peixe pique e puxam a cana.</li>
+        <li>Os aldeões acenam-te uma vez por dia e vão para casa dormir quando anoitece.</li>
+        <li>As andorinhas fazem ninhos e põem ovos.</li>
+        <li>As galinhas sentam-se, os lobos adormecem e as ovelhas voltam a ganhar lã.</li>
+        <li>E há quem diga que, nas noites de nevoeiro, se vê alguém ao longe que não pertence aqui…</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="claro">
+  <div class="wrap">
+    <h2 class="bloco-txt">Imagens</h2>
+    <p class="lead">Tudo o que vês aqui foi capturado dentro do jogo. Clica numa imagem para a veres em grande.</p>
+    <div class="galeria">
+      <a class="largo" href="img/aldeia.jpg"><img src="img/aldeia.jpg" alt="Aldeia vista do alto, junto ao mar" loading="lazy"><span>Uma aldeia vista do alto</span></a>
+      <a href="img/portao.jpg"><img src="img/portao.jpg" alt="Portão fechado e aberto" loading="lazy"><span>Cercas e portões</span></a>
+      <a href="img/ninho_agora.jpg"><img src="img/ninho_agora.jpg" alt="Ninhos de andorinha" loading="lazy"><span>Ninhos de andorinha</span></a>
+      <a href="img/praca.jpg"><img src="img/praca.jpg" alt="Praça da aldeia" loading="lazy"><span>A praça da aldeia</span></a>
+      <a href="img/chuva.jpg"><img src="img/chuva.jpg" alt="Animais abrigados da chuva" loading="lazy"><span>Abrigados da chuva</span></a>
+      <a class="largo" href="img/paisagem.jpg"><img src="img/paisagem.jpg" alt="Paisagem com lagos e praias" loading="lazy"><span>Lagos, praias e florestas</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="novidades">
+  <div class="wrap">
+    <h2 class="bloco-txt">Novidades</h2>
+    <p class="lead">O jogo recebe atualizações com frequência. Quando há uma versão nova, o próprio jogo avisa-te e atualiza-se com um clique.</p>
+    <div class="versoes" id="versoes"><p class="aviso-carregar">A carregar as novidades…</p></div>
+  </div>
+</section>
+
+<section id="descarregar">
+  <div class="wrap">
+    <h2 class="bloco-txt">Descarregar</h2>
+    <p class="lead">A Blocúria é grátis. Descarrega o instalador, instala e joga. Depois disso, o jogo mantém-se sempre atualizado sozinho.</p>
+    <div class="caixa-dl">
+      <div class="painel">
+        <h3>Como instalar</h3>
+        <ol class="passos">
+          <li><b>Descarrega o instalador</b>Carrega no botão abaixo. O ficheiro tem cerca de 80 MB.</li>
+          <li><b>Abre o ficheiro descarregado</b>Como o jogo é de um criador independente, o Windows pode mostrar o aviso "O Windows protegeu o seu PC". Carrega em <i>Mais informações</i> e depois em <i>Executar mesmo assim</i>.</li>
+          <li><b>Segue o instalador</b>Escolhe a pasta, carrega em Instalar e fica com um atalho no ambiente de trabalho.</li>
+          <li><b>Joga!</b>Para ires buscar atualizações, carrega em "Atualizações e novidades" no menu principal.</li>
+        </ol>
+        <a class="btn grande" href="Blocuria-Instalador.exe" download>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v10l3.5-3.5 1.4 1.4L12 16.8 6.1 10.9l1.4-1.4L11 13V3zM4 19h16v2H4z"/></svg>
+          Descarregar Blocúria
+        </a>
+        <p class="nota">O instalador traz a versão <b id="ver-inst">1.11.0</b>. Se já houver uma mais recente, o jogo atualiza-se na primeira vez que o abrires.</p>
+      </div>
+      <div class="painel">
+        <h3>Requisitos</h3>
+        <table class="tabela">
+          <tr><td>Sistema</td><td>Windows 10 ou 11, 64 bits</td></tr>
+          <tr><td>Processador</td><td>Qualquer processador dos últimos 10 anos</td></tr>
+          <tr><td>Memória</td><td>4 GB de RAM</td></tr>
+          <tr><td>Placa gráfica</td><td>Qualquer uma com suporte de WebGL 2 (incluindo as integradas)</td></tr>
+          <tr><td>Espaço</td><td>Cerca de 300 MB</td></tr>
+          <tr><td>Internet</td><td>Só para atualizações (o jogo funciona sem internet)</td></tr>
+        </table>
+        <p class="nota">Se o jogo estiver lento, baixa a distância de visão em Opções.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Andorinha · Blocúria</span>
+    <span>Feito com three.js e Electron</span>
+  </div>
+</footer>
+
+<div id="zoom"><img alt=""></div>
+
+<script>
+  // novidades: vêm do mesmo sítio de onde o jogo vai buscar as atualizações
+  const RAW = 'https://raw.githubusercontent.com/andorinhaex/blocuria/main/';
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  fetch(RAW + 'novidades.json', { cache: 'no-store' }).then(r => r.json()).then(list => {
+    const box = document.getElementById('versoes');
+    if (!Array.isArray(list) || !list.length) throw 0;
+    document.querySelectorAll('.ver-txt').forEach(e => e.textContent = 'versão ' + list[0].version);
+    box.innerHTML = list.slice(0, 4).map((v, i) => `
+      <article class="versao">
+        <header><span class="num">${esc(v.version)}</span><span class="tit">${esc(v.title || '')}</span>${v.date ? `<span class="data">${esc(new Date(v.date).toLocaleDateString('pt-PT'))}</span>` : ''}</header>
+        ${v.resumo ? `<p>${esc(v.resumo)}</p>` : ''}
+        ${(v.categorias || []).length ? `<details${i === 0 ? ' open' : ''}><summary>Ver tudo o que mudou</summary>${v.categorias.map(c => `<h4>${esc(c.nome)}</h4><ul>${(c.itens || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
+      </article>`).join('');
+  }).catch(() => { document.getElementById('versoes').innerHTML = '<p class="aviso-carregar">Não foi possível carregar as novidades agora. Vê-as dentro do jogo, em "Atualizações e novidades".</p>'; });
+
+  // galeria: ampliar
+  const z = document.getElementById('zoom');
+  document.querySelectorAll('.galeria a').forEach(a => a.addEventListener('click', e => { e.preventDefault(); z.querySelector('img').src = a.href; z.classList.add('on'); }));
+  z.addEventListener('click', () => z.classList.remove('on'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') z.classList.remove('on'); });
+</script>
+</body>
+</html>
