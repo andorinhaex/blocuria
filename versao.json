@@ -1,6 +1,6 @@
 {
- "version": "1.9.4",
- "sha256": "e94949ff01765d4bde0f91fd74d2727d785d21f901b017ac2db6853c81dbd9bc",
- "notes": "Primeira versão com atualizações automáticas: botão «Procurar atualizações» no menu principal.",
+ "version": "1.9.5",
+ "sha256": "78892469291d29054c40544ff364711fbbe8fe93991f6c5c718d82c3ec227bd1",
+ "notes": "Blocúria 1.9.5\n- Os aldeões só dizem olá uma vez por dia.\n- A cana da pescadora e do pescador tem linha e boia.\n- As trocas desbloqueiam-se à medida que fazes negócio com cada aldeão (níveis).\n- Lobo: nova pose de sentado, sobrancelhas corrigidas, deitado adormece (fecha os olhos e respira devagar).\n- Avestruz: animação de corrida nova; precisa de uma sela para ser montada (couro, fio e ferro, ou o pastor vende).\n- Muito menos ninhos de andorinha.\n- As criaturas agressivas defendem-se do teu lobo.\n- O lobo só se teletransporta para ti quando estás no chão.\n- «Ele não pertence aqui»: a 60 blocos, visível 2 a 5 segundos, raio a cair com clarão e trovão mais forte.\n- Cada aldeão tem uma mesa de trabalho onde vai trabalhar.\n- Vilas: praça nova no centro e baús que já não ficam juntos.",
  "minShell": "1.9.4"
 }
