@@ -1,5 +1,30 @@
 [
  {
+  "version": "1.15.0",
+  "date": "2026-11-27",
+  "title": "Modo espectador",
+  "resumo": "Novo modo de jogo: ficas invisível, voas e atravessas paredes, chão e água, para explorar o mundo à vontade.",
+  "categorias": [
+   {
+    "nome": "Modo espectador",
+    "itens": [
+     "Ficas invisível: as criaturas não te veem nem te atacam, os animais não fogem e os aldeões não te acenam.",
+     "Estás sempre a voar e atravessas paredes, o chão, montanhas e água. Por dentro da terra veem-se as grutas e os minérios, como num raio X.",
+     "Não partes nem pões blocos, não tens inventário e não apanhas nada. A mão e a barra de itens desaparecem e fica só um aviso discreto em baixo.",
+     "Para entrar: na pausa, carrega no botão \"Modo de jogo\" (passa de Sobrevivência para Criativo e depois para Espectador), ou escreve /espectador. Também podes criar um mundo já em modo espectador.",
+     "Para sair: o mesmo botão ou /sobrevivencia ou /criativo. Se estiveres dentro de um bloco, o jogo leva-te para cima, para um sítio livre.",
+     "No multijogador, quem está em espectador fica invisível para os outros jogadores e as criaturas também o ignoram."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Debaixo da terra em modo espectador",
+    "agora": "espectador.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.14.0",
   "date": "2026-11-27",
   "title": "Personaliza o teu boneco",

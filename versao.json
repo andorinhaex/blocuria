@@ -1,8 +1,8 @@
 {
- "version": "1.14.0",
- "sha256": "cc6fd5994431a455c15036cf8b6839f23c2bc657020bb21feba50a289e2cec88",
- "notes": "1.14.0: personalizar o boneco (pele, cabelo, olhos, roupa e sapatos), boneco no menu principal e barra de atualização corrigida",
+ "version": "1.15.0",
+ "sha256": "7ee33d98501c7fbcfe4e62366e5e66f74e49dab7e07b6b234dfa8e8528093058",
+ "notes": "1.15.0: modo espectador (invisível, voa e atravessa paredes)",
  "minShell": "1.9.4",
- "size": 1437352,
- "gz": 425698
+ "size": 1440404,
+ "gz": 426780
 }
