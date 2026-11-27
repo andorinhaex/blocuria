@@ -1,6 +1,6 @@
 {
- "version": "1.9.6",
- "sha256": "c795dac0bd28b4cbc247ba0ba302c698837971d3a409dc8168c07c4a8cf23406",
- "notes": "1.9.6: vedação corrigida (já não se passa pelo meio nem se salta por cima), portão de madeira novo, patas de trás do lobo sentado, sela só posta pelo jogador (tesoura tira-a)",
+ "version": "1.10.0",
+ "sha256": "97b57168044b2de7bcad4d54d86f97bf407b9aea36c7b54458c68d058933b27b",
+ "notes": "1.10.0: menu de novidades com categorias e fotos do antes e do agora",
  "minShell": "1.9.4"
 }
