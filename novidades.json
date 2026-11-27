@@ -1,5 +1,27 @@
 [
  {
+  "version": "1.13.1",
+  "date": "2026-11-27",
+  "title": "Correções do jogador em terceira pessoa",
+  "resumo": "O boneco do jogador já monta a avestruz com as pernas para a frente e bate com o braço para a frente.",
+  "categorias": [
+   {
+    "nome": "Correções",
+    "itens": [
+     "Montado na avestruz, em terceira pessoa, as pernas ficavam para trás. Agora vão para a frente e abertas, a abraçar a avestruz, com as mãos à frente.",
+     "Em terceira pessoa, o braço batia para trás quando atacavas ou partias blocos. Agora o golpe vai de cima para a frente.",
+     "No multijogador, os outros jogadores também se veem montados com a pose certa e a bater para a frente."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Montado na avestruz, visto de frente",
+    "agora": "montado.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.13.0",
   "date": "2026-11-27",
   "title": "Menus pixelizados e mais opções",

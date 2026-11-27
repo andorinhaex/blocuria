@@ -1,6 +1,6 @@
 {
- "version": "1.13.0",
- "sha256": "b605a9ad241ce3d14d767af30c66bd8e64240a1d827b283b9439e6cdf62fe8f5",
- "notes": "1.13.0: menus pixelizados com ícones, mais opções de imagem e volume por tipo de som; animais com voz",
+ "version": "1.13.1",
+ "sha256": "0323de88f91cd9a6c14e01b08019a72ce35215a33ece2932db0964531c30ef1a",
+ "notes": "1.13.1: em terceira pessoa, as pernas vão para a frente ao montar e o braço bate para a frente",
  "minShell": "1.9.4"
 }
