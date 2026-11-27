@@ -1,0 +1,6 @@
+{
+ "version": "1.9.4",
+ "sha256": "e94949ff01765d4bde0f91fd74d2727d785d21f901b017ac2db6853c81dbd9bc",
+ "notes": "Primeira versão com atualizações automáticas: botão «Procurar atualizações» no menu principal.",
+ "minShell": "1.9.4"
+}
