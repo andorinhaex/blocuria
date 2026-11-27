@@ -1,5 +1,89 @@
 [
  {
+  "version": "1.16.0",
+  "date": "2026-11-27",
+  "title": "Trovoadas, carris e música",
+  "resumo": "Trovoadas com raios e fogo, carris e carrinhos de mina, bússola, mapa com marcas, música própria e três estruturas novas.",
+  "categorias": [
+   {
+    "nome": "Trovoadas",
+    "itens": [
+     "Algumas chuvas são agora trovoadas: o céu escurece e caem raios de vez em quando, com o trovão a chegar mais tarde quando o raio cai longe.",
+     "Um raio que caia numa árvore, em tábuas, lã ou feno pega fogo. O fogo espalha-se aos blocos que ardem e queima-os; a chuva acaba por apagá-lo ao ar livre.",
+     "Quem estiver mesmo ao lado de um raio, ou dentro do fogo, perde vida. Os animais e as criaturas também.",
+     "Novo para-raios: três barras de ferro em coluna. Se houver um a menos de 32 blocos, o raio cai sempre nele e não faz fogo nem estragos.",
+     "Comandos novos: /trovoada começa uma trovoada e /raio faz cair um raio onde estás a olhar."
+    ]
+   },
+   {
+    "nome": "Carris e carrinhos de mina",
+    "itens": [
+     "Carris (ferro e pau, 16 de cada vez): ligam-se sozinhos aos do lado, fazem curvas e sobem rampas de um bloco.",
+     "Carris elétricos (ouro, pau e carvão, 6 de cada vez): dão impulso ao carrinho que passa por cima.",
+     "Carrinho de mina (cinco barras de ferro em forma de U): põe-se em cima dos carris e anda-se nele com o botão direito, como no barco. Segue as curvas, sobe e desce rampas e para no fim da linha."
+    ]
+   },
+   {
+    "nome": "Bússola e mapa",
+    "itens": [
+     "Nova bússola (ferro e uma safira no meio): quando a tens na mão aparece um mostrador no canto do ecrã, com a agulha a apontar para a tua cama (ou para o início do mundo, se ainda não dormiste) e a distância em metros.",
+     "O mapa marca agora as estruturas por onde já passaste (aldeias, ruínas e as estruturas novas com um X vermelho), a tua cama e o início do mundo."
+    ]
+   },
+   {
+    "nome": "Música própria",
+    "itens": [
+     "A música de fundo foi toda refeita: em vez de notas soltas, agora há peças compostas para o Blocúria, com melodia, acordes e baixo.",
+     "As peças mudam conforme o sítio: calmas e alegres de dia, lentas à noite, escuras nas grutas (com gotas de água) e mais animadas nas vilas com aldeões.",
+     "Entre peças há silêncio, como antes. O comando /musica diz o nome da peça que está a tocar."
+    ]
+   },
+   {
+    "nome": "Estruturas novas",
+    "itens": [
+     "Templo do deserto: uma pirâmide de arenito às riscas com uma sala por dentro. Há umas escadas escondidas que descem até uma câmara com quatro baús.",
+     "Navio naufragado: no fundo do mar, partido e com o mastro caído, com dois ou três baús de mapas, bússolas e tesouros.",
+     "Torre de vigia: no cimo dos montes altos, com uma escada em caracol que se sobe sem saltar e um miradouro lá em cima com um baú.",
+     "Também se chega a elas com /estrutura templo, /estrutura navio e /estrutura vigia."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Trovoada com raio",
+    "agora": "trovoada.jpg"
+   },
+   {
+    "titulo": "Árvore a arder depois de um raio",
+    "agora": "fogo.jpg"
+   },
+   {
+    "titulo": "Carris, rampa e carrinhos de mina",
+    "agora": "carris.jpg"
+   },
+   {
+    "titulo": "A bússola na mão",
+    "agora": "bussola.jpg"
+   },
+   {
+    "titulo": "O mapa com o templo marcado",
+    "agora": "mapa.jpg"
+   },
+   {
+    "titulo": "Templo do deserto",
+    "agora": "templo.jpg"
+   },
+   {
+    "titulo": "Navio naufragado",
+    "agora": "navio.jpg"
+   },
+   {
+    "titulo": "Torre de vigia",
+    "agora": "vigia.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.15.0",
   "date": "2026-11-27",
   "title": "Modo espectador",

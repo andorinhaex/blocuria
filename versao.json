@@ -1,8 +1,8 @@
 {
- "version": "1.15.0",
- "sha256": "7ee33d98501c7fbcfe4e62366e5e66f74e49dab7e07b6b234dfa8e8528093058",
- "notes": "1.15.0: modo espectador (invisível, voa e atravessa paredes)",
+ "version": "1.16.0",
+ "sha256": "4736d1d01a0a2afe30fdcd70259d639f0955af081557492b91d0c93d2d2a40e7",
+ "notes": "1.16.0: trovoadas com raios e fogo, para-raios, carris e carrinhos de mina, bússola, mapa com marcas, música própria, templo do deserto, navio naufragado e torre de vigia",
  "minShell": "1.9.4",
- "size": 1440404,
- "gz": 426780
+ "size": 1478212,
+ "gz": 440500
 }
