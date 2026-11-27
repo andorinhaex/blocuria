@@ -1,5 +1,86 @@
 [
  {
+  "version": "1.11.0",
+  "date": "2026-11-27",
+  "title": "Animais com vida própria",
+  "resumo": "Os animais ficam no mundo como o terreno, dormem de noite, abrigam-se da chuva e as galinhas sentam-se. Ninhos novos e o pescador já pesca a sério.",
+  "categorias": [
+   {
+    "nome": "Animais no mundo",
+    "itens": [
+     "Os animais já não desaparecem: quando te afastas e o chunk deles deixa de estar carregado, ficam lá guardados e voltam a aparecer no mesmo sítio quando regressas.",
+     "Os animais também ficam guardados quando sais do mundo.",
+     "Cada chunk recebe os seus animais só uma vez, na primeira vez que é carregado. Já não aparecem animais novos no lugar dos que lá estavam.",
+     "Os animais que estão longe de ti (a mais de 44 blocos) ficam parados e não gastam processador. Voltam a mexer-se quando te aproximas."
+    ]
+   },
+   {
+    "nome": "Dormir e descansar",
+    "itens": [
+     "De noite, cada animal escolhe uma altura para se deitar e dormir: dobra as patas, encosta a barriga ao chão e fecha os olhos.",
+     "De manhã acordam aos poucos, cada um à sua hora.",
+     "Se lhes bateres ou se assustarem, levantam-se logo.",
+     "As galinhas e os galos sentam-se de vez em quando durante o dia, com as patas recolhidas debaixo das penas."
+    ]
+   },
+   {
+    "nome": "Chuva",
+    "itens": [
+     "Quando chove, os animais procuram o abrigo mais perto a que conseguem chegar a pé: debaixo de árvores, nas entradas das grutas ou debaixo de telhados e alpendres.",
+     "Ficam lá enquanto chover e só voltam à vida normal quando a chuva para."
+    ]
+   },
+   {
+    "nome": "Ninhos de andorinha",
+    "itens": [
+     "Os ninhos foram refeitos: taça de raminhos entrelaçados e lama, mais larga em cima, com raminhos soltos a sair da borda e forro de palha e penas por dentro.",
+     "Os ovos aparecem a três dimensões, brancos com pintas castanhas."
+    ]
+   },
+   {
+    "nome": "Pescador",
+    "itens": [
+     "O pescador e a pescadora pescam como tu: lançam a linha, a boia fica a boiar na água, o peixe pica e a boia afunda, e depois puxam.",
+     "Cada vez esperam um tempo diferente até o peixe picar."
+    ]
+   },
+   {
+    "nome": "Lobo",
+    "itens": [
+     "Corrigido: quando o lobo dorme, já não se vê o amarelo dos olhos fechados de lado."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Animais a dormir",
+    "agora": "dormir.jpg"
+   },
+   {
+    "titulo": "Galinhas e galos sentados",
+    "agora": "galinhas.jpg"
+   },
+   {
+    "titulo": "Abrigados da chuva debaixo de um telhado",
+    "agora": "chuva.jpg"
+   },
+   {
+    "titulo": "Ninhos de andorinha (com ovos e vazio)",
+    "antes": "ninho_antes.jpg",
+    "agora": "ninho_agora.jpg"
+   },
+   {
+    "titulo": "O pescador a pescar",
+    "agora": "pescador.gif"
+   },
+   {
+    "titulo": "Olho do lobo a dormir, visto de lado",
+    "antes": "lobo_olho_antes.jpg",
+    "agora": "lobo_olho_agora.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.10.0",
   "date": "2026-11-27",
   "title": "Menu de novidades",

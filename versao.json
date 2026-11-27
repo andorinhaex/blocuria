@@ -1,6 +1,6 @@
 {
- "version": "1.10.0",
- "sha256": "97b57168044b2de7bcad4d54d86f97bf407b9aea36c7b54458c68d058933b27b",
- "notes": "1.10.0: menu de novidades com categorias e fotos do antes e do agora",
+ "version": "1.11.0",
+ "sha256": "5a25873ba0644864d3621d454070020daabee2f67dca039430ab28afe8ef0ee4",
+ "notes": "1.11.0: animais guardados no mundo, a dormir de noite e abrigados da chuva; galinhas sentam-se; ninhos novos; o pescador pesca",
  "minShell": "1.9.4"
 }
