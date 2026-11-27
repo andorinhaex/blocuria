@@ -1,5 +1,62 @@
 [
  {
+  "version": "1.13.0",
+  "date": "2026-11-27",
+  "title": "Menus pixelizados e mais opções",
+  "resumo": "Os menus ganharam um ar pixelizado, com letra, botões e ícones novos. Há muito mais opções de imagem e um volume separado para cada tipo de som.",
+  "categorias": [
+   {
+    "nome": "Menus e ícones",
+    "itens": [
+     "Letra pixelizada nova em todo o jogo (Pixelify Sans).",
+     "Botões quadrados com relevo em píxeis: luz em cima, sombra em baixo, e afundam quando carregas.",
+     "Cada botão dos menus tem um ícone desenhado píxel a píxel: jogar, rede, opções, atualizações, conquistas, voltar, sair e outros.",
+     "Painéis, caixas de texto, barras de deslizar, barra de itens e avisos refeitos com o mesmo estilo."
+    ]
+   },
+   {
+    "nome": "Opções de imagem",
+    "itens": [
+     "Brilho: de escuro a claro. Ajuda a ver melhor de noite e nas grutas.",
+     "Resolução: de 50% a 100%. Baixar a resolução torna o jogo mais rápido em computadores fracos.",
+     "Distância das criaturas: as criaturas mais longe do que isto não se desenham.",
+     "Limite de imagens por segundo: 30, 60, 90, 120 ou sem limite.",
+     "Nuvens, chuva e neve visíveis, partículas (todas, poucas ou nenhumas), balanço da mão ao andar e mostrar as imagens por segundo."
+    ]
+   },
+   {
+    "nome": "Som",
+    "itens": [
+     "Volume separado para a música, a chuva e os trovões, os animais, as criaturas hostis, os blocos e passos, o jogador e os menus e botões, além do volume geral.",
+     "Os animais têm voz: as ovelhas balem, os javalis grunhem, as galinhas cacarejam, os galos cantam de manhã, o lanudo muge, a avestruz ribomba, a rã coaxa, o veado berra e a pinça estala.",
+     "Os animais a dormir ficam calados."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Menu principal",
+    "antes": "menu_antes.jpg",
+    "agora": "menu_agora.jpg"
+   },
+   {
+    "titulo": "Opções de imagem",
+    "antes": "imagem_antes.jpg",
+    "agora": "imagem_agora.jpg"
+   },
+   {
+    "titulo": "Opções de som",
+    "antes": "som_antes.jpg",
+    "agora": "som_agora.jpg"
+   },
+   {
+    "titulo": "Criar um mundo",
+    "antes": "criar_antes.jpg",
+    "agora": "criar_agora.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.12.0",
   "date": "2026-11-27",
   "title": "Ecrã inicial novo",
