@@ -1,0 +1,134 @@
+[
+ {
+  "version": "1.10.0",
+  "date": "2026-11-27",
+  "title": "Menu de novidades",
+  "resumo": "Agora, sempre que há uma atualização, vês tudo o que ela traz antes de atualizar, arrumado por categorias e com fotos.",
+  "categorias": [
+   {
+    "nome": "Atualizações",
+    "itens": [
+     "O botão do menu principal chama-se agora \"Atualizações e novidades\" e fica verde quando há uma versão nova.",
+     "Quando há uma atualização, carregar no botão abre este menu com tudo o que a versão nova traz, e o botão \"Atualizar agora\" fica no fundo.",
+     "Se já tens a versão mais recente, o botão mostra na mesma tudo o que veio na última atualização.",
+     "Se saltaste várias versões, aparecem todas em separadores no topo, para veres tudo o que mudou desde a tua."
+    ]
+   },
+   {
+    "nome": "Fotos",
+    "itens": [
+     "No fim de cada versão há fotos do que mudou: lado a lado, o \"Antes\" e o \"Agora\". O que é totalmente novo aparece só com \"Novo\".",
+     "Clica numa foto para a ver em grande. Clica outra vez, ou carrega em Esc, para fechar.",
+     "O texto funciona sem internet. As fotos são descarregadas do GitHub e precisam de internet."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "O botão de atualizar",
+    "antes": "atualizar_antes.jpg",
+    "agora": "atualizar_agora.jpg"
+   }
+  ]
+ },
+ {
+  "version": "1.9.6",
+  "date": "2026-11-27",
+  "title": "Cercas a sério e portão",
+  "resumo": "As cercas passaram a funcionar como deve ser e há um portão novo para entrares e saíres.",
+  "categorias": [
+   {
+    "nome": "Cercas e portões",
+    "itens": [
+     "Corrigido: já não se passa pelo meio da vedação, entre dois postes.",
+     "Corrigido: já não se salta por cima da vedação, nem tu nem os animais. Tem um bloco e meio de altura, como devia.",
+     "Novo: portão de madeira. Receita: pau, tábua e pau, em duas linhas.",
+     "O portão fica virado para onde estás a olhar quando o pões e liga-se sozinho à vedação.",
+     "Clique direito para abrir e fechar. Abre sempre para o lado contrário ao teu. Aberto passa-se pelo meio; fechado não passa ninguém."
+    ]
+   },
+   {
+    "nome": "Lobo",
+    "itens": [
+     "Quando está sentado, as patas de trás ficam por baixo do traseiro, ligadas ao corpo."
+    ]
+   },
+   {
+    "nome": "Avestruz",
+    "itens": [
+     "A sela é sempre tu que a pões. As avestruzes domadas antes da 1.9.5 também deixaram de trazer sela.",
+     "Receita da sela: 3 de couro em cima e, em baixo, fio, lingote de ferro e fio. O pastor também a vende por 3 safiras.",
+     "Usa a tesoura numa avestruz tua para lhe tirares a sela, que cai ao chão.",
+     "Se a avestruz morrer com sela, a sela cai ao chão."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Portão fechado e aberto",
+    "agora": "portao.jpg"
+   },
+   {
+    "titulo": "Animais fechados na cerca",
+    "agora": "cerca.jpg"
+   },
+   {
+    "titulo": "Lobo sentado",
+    "antes": "lobo_antes.jpg",
+    "agora": "lobo_agora.jpg"
+   }
+  ]
+ },
+ {
+  "version": "1.9.5",
+  "date": "2026-11-27",
+  "title": "Aldeias vivas",
+  "resumo": "Aldeões com mesas de trabalho e trocas por níveis, uma praça nova, o lobo e a avestruz mais bem feitos.",
+  "categorias": [
+   {
+    "nome": "Aldeões e aldeias",
+    "itens": [
+     "Cada aldeão só diz olá uma vez por dia.",
+     "A cana de pesca do pescador e da pescadora tem linha e boia.",
+     "Trocas por níveis: começas com 3 e desbloqueias mais 2 por nível, à medida que fazes negócio com o mesmo aldeão.",
+     "Cada aldeão tem uma mesa de trabalho em casa e vai lá trabalhar.",
+     "O centro da aldeia é agora uma praça de pedra com poço, candeeiros, bancos e canteiros.",
+     "Corrigido: os dois baús da casa do mineiro estavam juntos e formavam um baú duplo estragado."
+    ]
+   },
+   {
+    "nome": "Lobo",
+    "itens": [
+     "Senta-se como um cão a sério e as sobrancelhas já não entram na cabeça.",
+     "Deitado, ao fim de uns segundos adormece.",
+     "As criaturas agressivas defendem-se quando ele as ataca.",
+     "Só se teletransporta para ti quando estás no chão."
+    ]
+   },
+   {
+    "nome": "Avestruz",
+    "itens": [
+     "Corrida nova, com passadas compridas.",
+     "É preciso pôr-lhe uma sela para a montares."
+    ]
+   },
+   {
+    "nome": "Outros",
+    "itens": [
+     "Os ninhos de andorinha são muito mais raros.",
+     "Quando \"ele não pertence aqui\" desaparece, cai um raio no sítio onde estava."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Aldeia",
+    "agora": "aldeia.jpg"
+   },
+   {
+    "titulo": "Avestruz a correr",
+    "agora": "avestruz.jpg"
+   }
+  ]
+ }
+]
