@@ -117,6 +117,14 @@
   .tabela { width: 100%; border-collapse: collapse; font-size: 15px; } .tabela td { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; } .tabela td:first-child { opacity: .7; width: 42%; }
   .nota { font-size: 14px; opacity: .75; margin-top: 14px; }
 
+  /* avaliações */
+  #avaliacoes .cx { display: grid; grid-template-columns: 1fr 1.25fr; gap: 34px; align-items: start; }
+  @media (max-width: 860px) { #avaliacoes .cx { grid-template-columns: 1fr; } }
+  .estrelas { display: flex; gap: 6px; margin: 0 0 18px; }
+  .estrelas i { width: 30px; height: 30px; background: var(--ouro); box-shadow: inset -5px -5px 0 rgba(0,0,0,.22); clip-path: polygon(50% 0, 62% 35%, 100% 38%, 70% 60%, 80% 100%, 50% 76%, 20% 100%, 30% 60%, 0 38%, 38% 35%); }
+  .form-moldura { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 0 rgba(0,0,0,.08), 0 14px 30px rgba(0,0,0,.08); }
+  .form-moldura iframe { width: 100%; height: 1150px; border: 0; display: block; }
+  .form-espera { padding: 34px 26px; text-align: center; color: #3d4654; }
   footer { background: #070e18; padding: 34px 0; font-size: 14px; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; opacity: .75; }
 
@@ -130,7 +138,7 @@
 <nav>
   <div class="wrap">
     <a class="marca" href="#"><img src="img/icone.png" alt="">Blocúria</a>
-    <div class="links"><a href="#mundo">O mundo</a><a href="#galeria">Imagens</a><a href="#novidades">Novidades</a><a href="#descarregar">Descarregar</a></div>
+    <div class="links"><a href="#mundo">O mundo</a><a href="#galeria">Imagens</a><a href="#novidades">Novidades</a><a href="#avaliacoes">Avaliações</a></div>
     <a class="btn nav-dl" href="#descarregar">Descarregar</a>
   </div>
 </nav>
@@ -140,11 +148,7 @@
     <h1 class="bloco-txt">Blocúria</h1>
     <p class="sub">Um mundo inteiro feito de blocos. Explora montanhas e grutas, constrói a tua casa, faz negócio nas aldeias e aguenta-te quando cai a noite.</p>
     <div class="acoes">
-      <a class="btn grande" href="Blocuria-Instalador.exe" download>
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3h2v10l3.5-3.5 1.4 1.4L12 16.8 6.1 10.9l1.4-1.4L11 13V3zM4 19h16v2H4z"/></svg>
-        Descarregar para Windows
-      </a>
-      <a class="btn sec" href="#mundo">Saber mais</a>
+      <a class="btn grande" href="#mundo">Saber mais</a>
     </div>
     <div class="meta">Grátis · Windows 10 e 11 (64 bits) · <span class="ver-txt">versão mais recente</span> · atualiza-se sozinho</div>
   </div>
@@ -224,6 +228,24 @@
   </div>
 </section>
 
+<section id="avaliacoes" class="claro">
+  <div class="wrap cx">
+    <div>
+      <h2 class="bloco-txt">Avaliações e sugestões</h2>
+      <div class="estrelas"><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="lead" style="margin-bottom:18px">Já jogaste a Blocúria? Diz-nos o que achaste. Cada avaliação e cada sugestão é lida, e muitas das novidades do jogo nascem de ideias de quem joga.</p>
+      <ul class="lista-bloco" style="color:#3d4654">
+        <li>Dá uma nota de 1 a 5 estrelas.</li>
+        <li>Conta o que mais gostaste.</li>
+        <li>Sugere o que podia ser melhor ou o que gostavas de ver no jogo.</li>
+        <li>Encontraste um erro? Explica o que aconteceu.</li>
+      </ul>
+      <p class="nota" style="color:#3d4654">Não precisas de criar conta. Demora menos de um minuto.</p>
+    </div>
+    <div class="form-moldura" id="formBox"><div class="form-espera">O formulário de avaliações vai aparecer aqui em breve.</div></div>
+  </div>
+</section>
+
 <section id="descarregar">
   <div class="wrap">
     <h2 class="bloco-txt">Descarregar</h2>
@@ -283,6 +305,16 @@
         ${(v.categorias || []).length ? `<details${i === 0 ? ' open' : ''}><summary>Ver tudo o que mudou</summary>${v.categorias.map(c => `<h4>${esc(c.nome)}</h4><ul>${(c.itens || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>`).join('')}</details>` : ''}
       </article>`).join('');
   }).catch(() => { document.getElementById('versoes').innerHTML = '<p class="aviso-carregar">Não foi possível carregar as novidades agora. Vê-as dentro do jogo, em "Atualizações e novidades".</p>'; });
+
+  // avaliações: formulário Google (o link fica aqui; com o link completo aparece dentro da página, com o curto abre noutro separador)
+  const FORM_URL = '';
+  (() => {
+    const box = document.getElementById('formBox');
+    if (!FORM_URL) return;
+    const m = FORM_URL.match(/docs\.google\.com\/forms\/d\/e\/([^/]+)/);
+    if (m) box.innerHTML = `<iframe src="https://docs.google.com/forms/d/e/${m[1]}/viewform?embedded=true" title="Formulário de avaliação da Blocúria" loading="lazy">A carregar…</iframe>`;
+    else box.innerHTML = `<div class="form-espera"><p style="margin:0 0 18px">O formulário abre numa página nova.</p><a class="btn grande" href="${FORM_URL}" target="_blank" rel="noopener">Deixar a minha avaliação</a></div>`;
+  })();
 
   // galeria: ampliar
   const z = document.getElementById('zoom');
