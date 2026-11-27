@@ -1,5 +1,30 @@
 [
  {
+  "version": "1.12.0",
+  "date": "2026-11-27",
+  "title": "Ecrã inicial novo",
+  "resumo": "A paisagem do ecrã inicial foi refeita: aparece completa, com animais a passear, e levemente desfocada.",
+  "categorias": [
+   {
+    "nome": "Ecrã inicial",
+    "itens": [
+     "O jogo escolhe um sítio bonito para a paisagem, uma planície ou um bosque, sem montanhas coladas à câmara.",
+     "O terreno só aparece depois de estar todo carregado, com um esbatimento suave. Já não se veem pedaços de terreno em falta.",
+     "Há animais a passear na paisagem: ovelhas, javalis, galinhas, veados e outros, conforme o sítio.",
+     "A imagem está levemente desfocada, para os botões e o título se lerem melhor.",
+     "A câmara roda devagar e mostra a paisagem toda à volta."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Ecrã inicial",
+    "antes": "menu_antes.jpg",
+    "agora": "menu_agora.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.11.0",
   "date": "2026-11-27",
   "title": "Animais com vida própria",
