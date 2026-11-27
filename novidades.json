@@ -1,5 +1,50 @@
 [
  {
+  "version": "1.14.0",
+  "date": "2026-11-27",
+  "title": "Personaliza o teu boneco",
+  "resumo": "Agora escolhes as cores e o cabelo do teu boneco, que aparece no menu principal. A barra de atualização foi refeita.",
+  "categorias": [
+   {
+    "nome": "Personalizar",
+    "itens": [
+     "O teu boneco aparece no menu principal, à esquerda, a virar-se devagar, com o botão \"Personalizar\" por baixo.",
+     "Podes escolher a cor da pele, do cabelo, dos olhos, da camisola, do cinto, das calças e dos sapatos. Cada uma tem várias cores prontas e um quadrado para escolheres qualquer outra cor.",
+     "Há quatro cortes de cabelo: curto, comprido, rapado e careca.",
+     "No ecrã de personalizar, o boneco roda sozinho e podes arrastá-lo com o rato para o ver de todos os lados. O botão \"Repor\" volta ao boneco original.",
+     "O aspeto escolhido vale em todos os mundos: em terceira pessoa, no inventário e no braço que vês na primeira pessoa.",
+     "No multijogador, os outros jogadores veem-te com o teu aspeto e tu vês cada um com o dele."
+    ]
+   },
+   {
+    "nome": "Atualizações",
+    "itens": [
+     "Corrigido: a barra de descarregar passava para fora dos limites. O GitHub manda o jogo comprimido e a conta era feita com o tamanho errado.",
+     "A barra mostra agora a percentagem verdadeira no meio e nunca passa dos 100%. Também ficou com o estilo pixelizado dos menus."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "O boneco no menu principal",
+    "antes": "menu_antes.jpg",
+    "agora": "menu_agora.jpg"
+   },
+   {
+    "titulo": "Personalizar o boneco",
+    "agora": "personalizar.jpg"
+   },
+   {
+    "titulo": "No multijogador, cada um com o seu aspeto",
+    "agora": "multijogador.jpg"
+   },
+   {
+    "titulo": "Barra de atualização",
+    "agora": "barra.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.13.1",
   "date": "2026-11-27",
   "title": "Correções do jogador em terceira pessoa",
