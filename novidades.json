@@ -1,5 +1,24 @@
 [
  {
+  "version": "1.16.1",
+  "date": "2026-11-28",
+  "title": "Música nova de piano",
+  "resumo": "A música foi toda refeita: onze peças calmas de piano, mais longas e diferentes em cada vez que tocam.",
+  "categorias": [
+   {
+    "nome": "Música",
+    "itens": [
+     "Onze peças novas de piano, com eco de sala, acordes suaves por baixo e sinos de vez em quando: três de dia, três à noite, duas nas grutas, duas nas vilas com aldeões e uma só para o menu principal.",
+     "Cada peça tem a sua entrada e o seu acompanhamento (algumas são valsas, em compasso de três) e dura entre um minuto e meio e dois minutos e meio.",
+     "Em cada vez que tocam, o tom, o andamento e pequenos pormenores da melodia mudam um pouco, para nunca soarem exatamente iguais.",
+     "Entre peças há agora um a três minutos de silêncio, para a música não cansar. A música do menu começa logo ao abrir o jogo e acaba devagar quando entras num mundo.",
+     "Ao entrares numa gruta ou numa vila, a peça que está a tocar acaba devagar e vem uma própria desse sítio."
+    ]
+   }
+  ],
+  "fotos": []
+ },
+ {
   "version": "1.16.0",
   "date": "2026-11-27",
   "title": "Trovoadas, carris e música",

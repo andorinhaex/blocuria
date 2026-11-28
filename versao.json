@@ -1,8 +1,8 @@
 {
- "version": "1.16.0",
- "sha256": "4736d1d01a0a2afe30fdcd70259d639f0955af081557492b91d0c93d2d2a40e7",
- "notes": "1.16.0: trovoadas com raios e fogo, para-raios, carris e carrinhos de mina, bússola, mapa com marcas, música própria, templo do deserto, navio naufragado e torre de vigia",
+ "version": "1.16.1",
+ "sha256": "02eaab176c9ae38a4db47c73b6afbbe2adf5dcd7a3bb9f13f57d857b1cefcdc1",
+ "notes": "1.16.1: música nova de piano — onze peças mais longas, cada uma com a sua entrada, diferentes em cada vez que tocam",
  "minShell": "1.9.4",
- "size": 1478212,
- "gz": 440500
+ "size": 1487448,
+ "gz": 443852
 }
