@@ -1,8 +1,8 @@
 {
- "version": "1.16.1",
- "sha256": "02eaab176c9ae38a4db47c73b6afbbe2adf5dcd7a3bb9f13f57d857b1cefcdc1",
- "notes": "1.16.1: música nova de piano — onze peças mais longas, cada uma com a sua entrada, diferentes em cada vez que tocam",
+ "version": "1.17.0",
+ "sha256": "e586e14f516e8a5af2df25a9c67e43e8db1ec0fcb61aff5f57248d23a88c4853",
+ "notes": "1.17.0: grutas novas à maneira do Minecraft — túneis compridos e ligados, salões com pilares, sem buraquinhos de um bloco",
  "minShell": "1.9.4",
- "size": 1487448,
- "gz": 443852
+ "size": 1494292,
+ "gz": 446831
 }

@@ -1,5 +1,35 @@
 [
  {
+  "version": "1.17.0",
+  "date": "2026-11-28",
+  "title": "Grutas novas",
+  "resumo": "As grutas foram refeitas à maneira do Minecraft: túneis compridos e ligados, salões enormes com pilares, e muito menos buraquinhos de um bloco.",
+  "categorias": [
+   {
+    "nome": "Grutas",
+    "itens": [
+     "Túneis clássicos: partem de um ponto (às vezes de um salão redondo), andam 80 a 110 blocos, ficam mais largos a meio e finos nas pontas e dividem-se em dois ramos. Têm o chão plano e o teto redondo, e às vezes chegam à superfície e fazem uma entrada.",
+     "Túneis em esparguete que serpenteiam pelo subsolo, com a largura a mudar ao longo do caminho.",
+     "Salões grandes, cada vez maiores quanto mais fundo, com pilares de pedra do chão ao teto. Há zonas do mundo com salões ainda maiores.",
+     "No fim, as grutas são limpas: os buraquinhos de um bloco e as frestas onde não se cabe desaparecem, e as paredes ficam mais lisas.",
+     "Nos testes, o número de grutas pequenas e soltas baixou de mais de 5000 para cerca de 300 na mesma área, e as frestas passaram de 9 % para 1 % do espaço das grutas. Quase todas as grutas ficam agora ligadas umas às outras.",
+     "Os lagos de água e de lava lá em baixo, os cristais, o musgo e as galerias abandonadas continuam como estavam.",
+     "Nos mundos que já tens, as zonas onde já mexeste ficam como estavam; as grutas novas aparecem nas outras. Na fronteira pode haver um corte entre as grutas antigas e as novas."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Salão com pilares",
+    "agora": "salao.jpg"
+   },
+   {
+    "titulo": "Lago numa gruta",
+    "agora": "lago.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.16.1",
   "date": "2026-11-28",
   "title": "Música nova de piano",
