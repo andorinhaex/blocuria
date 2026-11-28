@@ -1,8 +1,8 @@
 {
- "version": "1.17.2",
- "sha256": "909a1d42d544af9ab115cc50535641c18024b572ef16949a86299d11926685fc",
- "notes": "1.17.2: barcos e carrinhos de mina sólidos — dá para ficar em cima e empurrar",
+ "version": "1.17.3",
+ "sha256": "550e24277625782ed2c7a1c95e8ddeebf990ec144da8abe7999ed9f41df8f634",
+ "notes": "1.17.3: barcos e carrinhos partilhados no multijogador",
  "minShell": "1.9.4",
- "size": 1500886,
- "gz": 449424
+ "size": 1504706,
+ "gz": 450520
 }

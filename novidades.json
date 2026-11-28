@@ -1,5 +1,24 @@
 [
  {
+  "version": "1.17.3",
+  "date": "2026-11-28",
+  "title": "Barcos e carrinhos no multijogador",
+  "resumo": "Os barcos e os carrinhos de mina passam a ser partilhados por todos os jogadores do mesmo mundo.",
+  "categorias": [
+   {
+    "nome": "Multijogador",
+    "itens": [
+     "Todos os jogadores veem os mesmos barcos e carrinhos, no mesmo sítio e a mexer-se ao mesmo tempo.",
+     "Quem se liga ao mundo de outro pode pôr barcos e carrinhos, montar neles, conduzi-los, empurrá-los, ficar em cima deles e parti-los; o barco ou o carrinho partido cai no chão como item para quem o quiser apanhar.",
+     "Cada barco ou carrinho só leva uma pessoa de cada vez: se já vai alguém dentro, aparece um aviso e não se consegue entrar.",
+     "Não se consegue empurrar um barco ou um carrinho que outro jogador vai a conduzir.",
+     "Se um jogador sair do jogo enquanto vai num barco, o barco fica livre para os outros."
+    ]
+   }
+  ],
+  "fotos": []
+ },
+ {
   "version": "1.17.2",
   "date": "2026-11-28",
   "title": "Barcos e carrinhos sólidos",
