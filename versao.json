@@ -1,8 +1,8 @@
 {
- "version": "1.17.1",
- "sha256": "fc0f1afcd592d199a85b169f28d582cfa37bb4759767d9d5f30fee00cec06b6e",
- "notes": "1.17.1: fogo animado e colado aos lados dos blocos; debaixo de água já não se ouve chapinhar",
+ "version": "1.17.2",
+ "sha256": "909a1d42d544af9ab115cc50535641c18024b572ef16949a86299d11926685fc",
+ "notes": "1.17.2: barcos e carrinhos de mina sólidos — dá para ficar em cima e empurrar",
  "minShell": "1.9.4",
- "size": 1498690,
- "gz": 448572
+ "size": 1500886,
+ "gz": 449424
 }

@@ -1,5 +1,24 @@
 [
  {
+  "version": "1.17.2",
+  "date": "2026-11-28",
+  "title": "Barcos e carrinhos sólidos",
+  "resumo": "Os barcos e os carrinhos de mina já não se atravessam: pode-se subir para cima deles e empurrá-los.",
+  "categorias": [
+   {
+    "nome": "Barcos e carrinhos",
+    "itens": [
+     "Os barcos e os carrinhos de mina passaram a ser sólidos: já não se passa por dentro deles.",
+     "Pode-se ficar em cima deles. Se o barco ou o carrinho andar, quem está em cima vai com ele.",
+     "Andar contra um barco empurra-o, na água ou em terra (em terra custa mais).",
+     "Andar contra um carrinho nos carris empurra-o ao longo da linha; empurrado do outro lado, volta para trás. Fora dos carris arrasta-se como uma caixa.",
+     "Quem vai montado continua a sair com Shift, como antes."
+    ]
+   }
+  ],
+  "fotos": []
+ },
+ {
   "version": "1.17.1",
   "date": "2026-11-28",
   "title": "Fogo animado e nadar debaixo de água",
