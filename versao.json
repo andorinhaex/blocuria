@@ -1,8 +1,8 @@
 {
- "version": "1.17.0",
- "sha256": "e586e14f516e8a5af2df25a9c67e43e8db1ec0fcb61aff5f57248d23a88c4853",
- "notes": "1.17.0: grutas novas à maneira do Minecraft — túneis compridos e ligados, salões com pilares, sem buraquinhos de um bloco",
+ "version": "1.17.1",
+ "sha256": "fc0f1afcd592d199a85b169f28d582cfa37bb4759767d9d5f30fee00cec06b6e",
+ "notes": "1.17.1: fogo animado e colado aos lados dos blocos; debaixo de água já não se ouve chapinhar",
  "minShell": "1.9.4",
- "size": 1494292,
- "gz": 446831
+ "size": 1498690,
+ "gz": 448572
 }

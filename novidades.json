@@ -1,5 +1,33 @@
 [
  {
+  "version": "1.17.1",
+  "date": "2026-11-28",
+  "title": "Fogo animado e nadar debaixo de água",
+  "resumo": "O fogo mexe-se e cola-se aos lados dos blocos que ardem; debaixo de água já não se ouve o chapinhar da superfície.",
+  "categorias": [
+   {
+    "nome": "Fogo",
+    "itens": [
+     "O fogo agora mexe-se: as chamas sobem, tremem e mudam de forma a toda a hora, em vez de ficarem paradas.",
+     "Quando o fogo está ao lado de um bloco que arde (um tronco, tábuas, lã…), as chamas ficam coladas à face desse bloco, a subir pela parede, em vez de ficarem a flutuar no meio do ar.",
+     "No chão, o fogo ficou mais cheio, com chamas cruzadas."
+    ]
+   },
+   {
+    "nome": "Água",
+    "itens": [
+     "A nadar com a cabeça debaixo de água já não se ouve o chapinhar de quem nada à superfície; ouvem-se só umas bolhinhas abafadas de vez em quando."
+    ]
+   }
+  ],
+  "fotos": [
+   {
+    "titulo": "Fogo colado ao tronco e fogo no chão",
+    "agora": "fogo.jpg"
+   }
+  ]
+ },
+ {
   "version": "1.17.0",
   "date": "2026-11-28",
   "title": "Grutas novas",
